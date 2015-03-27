@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>ngFilters</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.css">
+</head>
+<body>
+
+<!--ng-app value matches Angular module string name in js file-->
+<div ng-app="myApp">
+	<div ng-controller="AvengersCtrl">
+		<!--<input type="text" ng-model="searchText" />-->
+		<!--<input type="text" ng-model="search.$" />-->
+		<!--<input type="text" ng-model="search.name" />-->
+		<input type="text" ng-model="search" />
+		<table >
+			<!--<tr ng-repeat="actor in avengers.cast | filter:searchText">-->
+			<tr ng-repeat="actor in avengers.cast | filter:search">
+				<td highlight bind-field="actor.name"></td>
+				<td highlight bind-field="actor.character"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+<script src="ngFilters.js"></script>
+</body>
+</html>
